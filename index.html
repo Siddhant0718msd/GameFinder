@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GameFinder - discover games and software your PC can run.">
+<title>GameFinder | Games & Software Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a href="#home" class="brand"><span class="brand-mark">🎮</span><span>Game<span>Finder</span></span></a>
+  <nav id="navLinks">
+    <a href="#home">Home</a><a href="#catalog">Explore</a><a href="#compatibility">My PC</a><a href="#about">About</a>
+  </nav>
+  <div class="nav-right"><span id="pcStatus" class="pc-status">PC not set</span><button id="menuBtn" class="menu-btn">☰</button></div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <div class="pill">⚡ 10,000+ GAMES & SOFTWARE</div>
+    <h1>Find what your <span>PC</span> can handle.</h1>
+    <p>Explore games, software and developer tools, then compare their sample requirements with your saved PC specifications.</p>
+    <div class="actions"><button class="btn primary" data-scroll="#compatibility">🖥️ Check My PC</button><button class="btn ghost" data-scroll="#catalog">Explore Catalog →</button></div>
+    <div class="hero-stats"><div><b id="heroCount">10K+</b><small>Catalog Items</small></div><div><b>18+</b><small>Categories</small></div><div><b>100%</b><small>Frontend Only</small></div></div>
+  </div>
+  <div class="hero-visual">
+    <div class="glow"></div><div class="monitor"><div class="screen"><div class="screen-top"><span>GAMEFINDER</span><i>● ● ●</i></div><div class="screen-content"><div class="terminal-line">> scanning pc_specs...</div><div class="terminal-line ok">✓ RAM detected</div><div class="terminal-line ok">✓ GPU detected</div><div class="terminal-line ok">✓ CPU detected</div><div class="match">92%<small>COMPATIBILITY</small></div></div></div></div>
+    <div class="float-card one">🎮 <b>Games</b><small>Explore & compare</small></div>
+    <div class="float-card two">💻 <b>Software</b><small>Find useful tools</small></div>
+  </div>
+</section>
+
+<section class="section" id="catalog">
+  <div class="heading-row"><div><div class="eyebrow">THE LIBRARY</div><h2>Explore Everything</h2><p>Search through the static 10,000-item project catalog.</p></div><div class="catalog-count"><b id="resultCount">0</b><span>results</span></div></div>
+  <div class="toolbar">
+    <div class="search"><span>⌕</span><input id="search" placeholder="Search games, software, tools..." autocomplete="off"></div>
+    <select id="typeFilter"><option>All Types</option><option>Game</option><option>Software</option></select>
+    <select id="categoryFilter"><option>All Categories</option></select>
+    <select id="platformFilter"><option>All Platforms</option><option>Windows</option></select>
+    <select id="ramFilter"><option value="0">Any RAM</option><option value="4">≤ 4 GB</option><option value="8">≤ 8 GB</option><option value="16">≤ 16 GB</option></select>
+    <select id="sort"><option value="rating">Highest Rated</option><option value="requirements">Lowest Requirements</option><option value="name">Alphabetical</option></select>
+    <button id="clearBtn" class="clear">Clear</button>
+  </div>
+  <div id="quickFilters" class="quick-filters"></div>
+  <div id="catalogGrid" class="catalog-grid"></div>
+  <div id="empty" class="empty hidden"><div>🔎</div><h3>Nothing matched</h3><p>Try a different search or clear your filters.</p></div>
+  <div id="pagination" class="pagination"></div>
+</section>
+
+<section class="section pc-section" id="compatibility">
+  <div class="heading-row"><div><div class="eyebrow">YOUR HARDWARE</div><h2>Set Up Your PC</h2><p>Your specifications are stored only in this browser using localStorage.</p></div><div id="savedBadge" class="saved-badge">Not saved</div></div>
+  <form id="pcForm" class="pc-form">
+    <label>RAM<select id="ram"><option value="4">4 GB</option><option value="8" selected>8 GB</option><option value="16">16 GB</option><option value="32">32 GB</option></select></label>
+    <label>Graphics Card<select id="gpu"><option>Intel UHD Graphics 620</option><option>GTX 1050</option><option>GTX 1650</option><option>GTX 1660</option><option>RTX 2060</option><option>RTX 3060</option><option>RTX 4060</option></select></label>
+    <label>Processor<select id="cpu"><option>Intel i3</option><option selected>Intel i5</option><option>Intel i7</option><option>Ryzen 3</option><option>Ryzen 5</option><option>Ryzen 7</option></select></label>
+    <label>Operating System<select id="os"><option>Windows 10</option><option selected>Windows 11</option></select></label>
+    <button class="btn primary" type="submit">Save My PC Specs</button>
+  </form>
+  <div id="saveMessage" class="message"></div>
+</section>
+
+<section class="section feature-section">
+  <div class="feature-card"><span>🎯</span><div><div class="eyebrow">SIMPLE ALGORITHM</div><h3>Compatibility without benchmarks.</h3><p>RAM contributes 30 points, GPU 40 points and CPU 30 points. The result is an educational estimate, not a performance benchmark.</p></div></div>
+  <div class="feature-card"><span>📦</span><div><div class="eyebrow">STATIC CATALOG</div><h3>No database. No API. No backend.</h3><p>The catalog is bundled locally in JavaScript, so the project can run by opening <b>index.html</b>.</p></div></div>
+</section>
+
+<section class="section about" id="about">
+  <div class="about-box"><div class="about-icon">🎮</div><div><div class="eyebrow">COLLEGE PROJECT</div><h2>About GameFinder</h2><p>GameFinder is a frontend-only Computer Engineering project for discovering games and software based on PC requirements. It demonstrates HTML5, CSS3, JavaScript arrays/objects, filtering, sorting, localStorage and responsive UI design.</p><p class="notice">⚠️ Requirement values in this project are demo/sample values. Always check the official product requirements before installing or purchasing software or games.</p></div></div>
+</section>
+</main>
+
+<footer><div class="footer-top"><a href="#home" class="brand"><span class="brand-mark">🎮</span><span>Game<span>Finder</span></span></a><p>Find your next game. Discover your next tool.</p><div><a href="#home">Home</a><a href="#catalog">Explore</a><a href="#compatibility">My PC</a><a href="#about">About</a></div></div><small>© 2026 GameFinder • Frontend-only educational project</small></footer>
+
+<div id="modalBackdrop" class="modal-backdrop hidden"><div class="modal"><button id="closeModal" class="close">×</button><div id="modalBody"></div></div></div>
+<button id="topBtn" class="top-btn hidden">↑</button>
+<script src="data.js"></script><script src="script.js"></script>
+</body>
+</html>
